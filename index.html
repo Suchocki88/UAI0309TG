@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3.9 Teacher Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        h4 {
+            color: #555;
+            font-size: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .tip-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .script-box {
+            background: #fafafa;
+            border: 2px solid #ddd;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        
+        .script-label {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            font-style: normal;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .timeline {
+            margin: 1.5rem 0;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .timeline-time {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-content ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .timeline-content li {
+            margin: 0.3rem 0;
+        }
+        
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .material-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .material-card h4 {
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+        }
+        
+        strong {
+            color: #555;
+        }
+        
+        .objectives-list {
+            margin: 1rem 0;
+        }
+        
+        .objectives-list ul, .objectives-list ol {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .objectives-list li {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Lesson 3.9: Synthesizing Prompt Engineering Skills</h1>
+    <div class="subtitle">Discussion Day | Race for the Chocolate Activity</div>
+</div>
+
+<section class="section">
+    <h2>📋 Lesson Overview</h2>
+    
+    <div class="highlight-box">
+        <h4>Big Picture</h4>
+        <p>Chapter 3 concludes with a high-energy, collaborative assessment activity that serves triple duty: (1) synthesizing two weeks of prompt engineering learning, (2) identifying knowledge gaps before the Unit B exam, and (3) building team cohesion before entering the potentially sensitive territory of Chapter 4 (Bias).</p>
+    </div>
+    
+    <h3>Learning Objectives</h3>
+    <div class="objectives-list">
+        <ul>
+            <li>Apply conceptual understanding of prompt engineering to challenging scenarios</li>
+            <li>Practice collaborative problem-solving under time pressure</li>
+            <li>Identify areas needing review before Unit B assessment</li>
+            <li>Experience how team discussion deepens individual understanding</li>
+        </ul>
+    </div>
+    
+    <h3>Connection to Prior Learning</h3>
+    <p>This activity synthesizes:</p>
+    <ul>
+        <li><strong>Lessons 3.1-3.3:</strong> Prompt engineering techniques and iteration</li>
+        <li><strong>Lessons 3.4-3.5:</strong> Editorial judgment and evaluation</li>
+        <li><strong>Lesson 3.7:</strong> RLHF ethics and human labor in AI</li>
+        <li><strong>Lesson 3.8:</strong> AI as problem-solving partner</li>
+    </ul>
+</section>
+
+<section class="section">
+    <h2>📦 Materials Needed</h2>
+    
+    <div class="materials-grid">
+        <div class="material-card">
+            <h4>🔴 Required</h4>
+            <ul>
+                <li>8 Question Posters (provided PDF—print and post around room)</li>
+                <li>Answer sheets for teams (Scantron-style or provided template)</li>
+                <li>Answer key (Scantron format provided)</li>
+                <li>Prize for winning team (see options below)</li>
+                <li>Timer</li>
+            </ul>
+        </div>
+        
+        <div class="material-card">
+            <h4>🟡 Recommended</h4>
+            <ul>
+                <li>Colored markers for tracking team submissions</li>
+                <li>Clipboard for answer key</li>
+                <li>Tape for posting questions</li>
+                <li>Optional: second-place prizes</li>
+            </ul>
+        </div>
+        
+        <div class="material-card">
+            <h4>🟢 Optional</h4>
+            <ul>
+                <li>Trophy for winning team photo</li>
+                <li>Camera for documentation</li>
+                <li>Hall of Champions poster</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tip-box">
+        <h4>💡 Prize Options (Choose What Works for Your Context)</h4>
+        <p><strong>Traditional:</strong> Chocolate or candy (check allergy policies first)</p>
+        <p><strong>Trophy System:</strong> Reusable trophy cup that can be filled with small prizes, builds tradition across semesters</p>
+        <p><strong>Recognition:</strong> Certificate, Hall of Champions, team photo, bonus mastery points (1-2 points)</p>
+        <p><strong>Privilege:</strong> Teaching assistant status, choice of future topics, presentation order selection</p>
+        <p><strong>Key insight:</strong> The competition itself—intellectual challenge and collaboration—matters more than the prize. Adapt to your students' motivations and school policies.</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>🔧 Teacher Preparation</h2>
+    
+    <h3>Before Class (15 minutes setup time)</h3>
+    <div class="objectives-list">
+        <ul>
+            <li><strong>Print and post questions:</strong> Use provided 8-page PDF. Post questions around the room in accessible locations. Space them so teams can gather at each without crowding.</li>
+            <li><strong>Prepare answer key:</strong> Use provided Scantron-style answer key. Punch out the correct answers so you can quickly overlay it on team submissions.</li>
+            <li><strong>Create answer sheets:</strong> Either use blank Scantron forms or the provided template (one per team). Have extras ready.</li>
+            <li><strong>Prepare marking system:</strong> Have colored markers ready to mark each team's submission round (prevents re-grading same sheet).</li>
+            <li><strong>Secure prize:</strong> Have it ready but not visible yet.</li>
+        </ul>
+    </div>
+    
+    <h3>Mental Preparation</h3>
+    <p>This activity works best when you:</p>
+    <div class="objectives-list">
+        <ul>
+            <li><strong>Set energetic tone:</strong> This should feel fun, competitive, intellectually challenging</li>
+            <li><strong>Emphasize learning over winning:</strong> Celebrate good thinking, not just right answers</li>
+            <li><strong>Moderate spirited debate:</strong> During review, draw out reasoning from multiple perspectives</li>
+            <li><strong>Note patterns for Chapter 4:</strong> Which concepts need reinforcement?</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <h2>⏱️ Lesson Flow & Timeline</h2>
+    
+    <div class="timeline">
+        <h3>Suggested 50-Minute Structure</h3>
+        
+        <div class="timeline-item">
+            <div class="timeline-time">0:00-0:05<br>(5 min)</div>
+            <div class="timeline-content">
+                <strong>Opening: Set Up the Challenge</strong>
+                <ul>
+                    <li>Explain activity mechanics clearly</li>
+                    <li>Frame as exam prep opportunity</li>
+                    <li>Organize teams and distribute materials</li>
+                    <li>Build excitement</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-time">0:05-0:30<br>(25 min)</div>
+            <div class="timeline-content">
+                <strong>Team Competition Phase</strong>
+                <ul>
+                    <li>Teams work on 8 questions</li>
+                    <li>Submit answer sheets as ready</li>
+                    <li>Quick grading (number wrong only, not which ones)</li>
+                    <li>Teams iterate until one gets 8/8</li>
+                    <li>Winners become teaching assistants</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-time">0:30-0:42<br>(12 min)</div>
+            <div class="timeline-content">
+                <strong>Whole-Class Review</strong>
+                <ul>
+                    <li>Go through each question</li>
+                    <li>Reveal correct answers with reasoning</li>
+                    <li>Discuss why distractors are tempting</li>
+                    <li>Connect to chapter concepts</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-time">0:42-0:48<br>(6 min)</div>
+            <div class="timeline-content">
+                <strong>Field Journal Reflection</strong>
+                <ul>
+                    <li>Students reflect individually</li>
+                    <li>Team dynamics and strategy</li>
+                    <li>Conceptual clarity and gaps</li>
+                    <li>Exam readiness assessment</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-time">0:48-0:50<br>(2 min)</div>
+            <div class="timeline-content">
+                <strong>Closing</strong>
+                <ul>
+                    <li>Celebrate winning team</li>
+                    <li>Preview Chapter 4 (Bias)</li>
+                    <li>Remind about upcoming Unit B exam</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="warning-box">
+        <h4>⚠️ Timing Note</h4>
+        <p>The competition phase (25 minutes) may need adjustment based on your class. If no team has won by 20 minutes, consider offering hints on particularly difficult questions or extending time slightly. However, don't let it drag—better to move to review with teams still working than to lose momentum.</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>👨‍🏫 Detailed Facilitation Guide</h2>
+    
+    <h3>Opening: Set Up the Challenge (5 minutes)</h3>
+    
+    <div class="script-box">
+        <div class="script-label">SUGGESTED OPENING SCRIPT</div>
+        <p>"Alright, we've spent two weeks on prompt engineering—learning techniques, building editorial judgment, exploring ethics, and using AI as a thinking partner. Today we put it all together in a way that's both fun and serious exam prep.</p>
+        
+        <p>"You're going to compete in teams on 8 challenging questions. These aren't easy—they're similar to what you'll see on the Unit B exam. But today, you get to work together.</p>
+        
+        <p>"Here's how it works..."</p>
+    </div>
+    
+    <h4>Explain the Mechanics Clearly</h4>
+    <div class="objectives-list">
+        <ol>
+            <li><strong>Questions are posted around the room</strong> (gesture to them). Your team can tackle them in any order.</li>
+            <li><strong>Work together</strong> to answer all 8. Decide your strategy: split up and divide questions, or move as a team? Your call.</li>
+            <li><strong>When ready, submit your answer sheet.</strong> I'll quickly check it and tell you HOW MANY you got wrong—but not WHICH ones. You'll need to figure that out.</li>
+            <li><strong>If you miss any,</strong> you go back and revise. But you have to wait until all other teams have submitted before you can submit again. This keeps it fair.</li>
+            <li><strong>First team to get 8/8 wins the prize</strong> and becomes teaching assistants—you'll help other teams without giving direct answers.</li>
+            <li><strong>After we have a winner,</strong> we'll review all questions together so everyone understands the reasoning.</li>
+        </ol>
+    </div>
+    
+    <div class="tip-box">
+        <h4>💡 Setting Expectations</h4>
+        <p>"These questions are designed to be tough. Getting 6/8 or 7/8 on your first try is actually quite good. The challenge is in the discussion—figuring out WHY an answer is right, not just guessing."</p>
+    </div>
+    
+    <h4>Team Organization</h4>
+    <ul>
+        <li>Use existing teams if you have them</li>
+        <li>Or: count off to create teams of 3-4 students</li>
+        <li>Give each team an answer sheet</li>
+        <li>Clarify: ONE answer sheet per team with all members' names</li>
+    </ul>
+    
+    <h3>Team Competition Phase (25 minutes)</h3>
+    
+    <h4>Your Role During Competition</h4>
+    
+    <div class="objectives-list">
+        <p><strong>Monitor and Support (But Don't Teach)</strong></p>
+        <ul>
+            <li><strong>Circulate quietly</strong> to observe team dynamics and discussion quality</li>
+            <li><strong>Answer procedural questions</strong> but not content questions</li>
+            <li><strong>Encourage productive debate:</strong> "I hear two different answers—keep discussing"</li>
+            <li><strong>Redirect off-task teams</strong> gently</li>
+            <li><strong>Note which questions cause most debate</strong> for review discussion</li>
+        </ul>
+    </div>
+    
+    <h4>Grading Submissions</h4>
+    <div class="highlight-box">
+        <p><strong>Quick-Check Process:</strong></p>
+        <ol>
+            <li>Team brings answer sheet to you</li>
+            <li>Overlay your punched-out answer key</li>
+            <li>Count number of misses (don't say which ones)</li>
+            <li>Mark their sheet with colored marker (Round 1, Round 2, etc.)</li>
+            <li>Announce result: "You got 6 out of 8" or "You have 2 wrong"</li>
+            <li>If 8/8: Celebrate! They're the winners and become TAs</li>
+            <li>If wrong: "Back to your team—which ones might it be?"</li>
+        </ol>
+    </div>
+    
+    <div class="warning-box">
+        <h4>⚠️ Important: The "Waiting" Rule</h4>
+        <p>Once a team submits and gets feedback, they must wait until ALL other teams have submitted (or until a set time—maybe 3-5 minutes) before they can resubmit. This prevents one team from dominating your attention and gives all teams equal chances.</p>
+    </div>
+    
+    <h4>When First Team Wins (Around 15-20 minutes in)</h4>
+    <ul>
+        <li><strong>Celebrate enthusiastically:</strong> "We have our champions! Let's give them a round of applause!"</li>
+        <li><strong>Award the prize</strong> with fanfare</li>
+        <li><strong>Commission them as teaching assistants:</strong> "Your job now is to help other teams think through the questions—but don't give away answers. Ask questions, encourage discussion, but let them figure it out."</li>
+        <li><strong>Pull out second-place incentive</strong> if you have one: "We still need a second-place team..."</li>
+    </ul>
+    
+    <div class="tip-box">
+        <h4>💡 If No Winner After 20 Minutes</h4>
+        <p>Energy may be flagging. Consider:</p>
+        <ul>
+            <li>"I'll give you one hint: Question 5 is tricky because..."</li>
+            <li>"Let's do one more round of submissions, then we'll review together"</li>
+            <li>"You've all done excellent work. Let's move to reviewing the questions together"</li>
+        </ul>
+        <p>Don't let it drag to the point of frustration. The review is where the real learning happens.</p>
+    </div>
+    
+    <h3>Whole-Class Review (12 minutes)</h3>
+    
+    <div class="script-box">
+        <div class="script-label">TRANSITION TO REVIEW</div>
+        <p>"Alright, let's go through each question together. Even if your team got it right, you need to understand WHY—because you'll see questions like these on the exam."</p>
+    </div>
+    
+    <h4>For Each Question (1.5 minutes per question):</h4>
+    
+    <div class="objectives-list">
+        <ol>
+            <li><strong>Read the question aloud</strong> (or have a student read it)</li>
+            <li><strong>Quick poll:</strong> "Raise your hand for A... B... C... D..."</li>
+            <li><strong>Invite reasoning:</strong> "Who wants to defend their answer?"</li>
+            <li><strong>Draw out debate</strong> if multiple answers have support</li>
+            <li><strong>Reveal correct answer</strong> and explain reasoning thoroughly</li>
+            <li><strong>Explain why each distractor is tempting</strong> but wrong</li>
+            <li><strong>Connect to lesson content:</strong> "Remember in 3.4 when we talked about..."</li>
+        </ol>
+    </div>
+    
+    <div class="success-box">
+        <h4>✅ Review Goals</h4>
+        <p>Students should leave understanding:</p>
+        <ul>
+            <li>Why the correct answer is correct (conceptual reasoning)</li>
+            <li>What misconception each distractor represents</li>
+            <li>How this question connects to their learning</li>
+            <li>What this tells them about the upcoming exam</li>
+        </ul>
+    </div>
+    
+    <h4>Prioritize Questions That Caused Most Confusion</h4>
+    <p>If time is tight, spend more time on questions where teams struggled or debated heavily. Breeze through questions most teams got right quickly.</p>
+    
+    <h3>Field Journal Reflection (6 minutes)</h3>
+    
+    <div class="script-box">
+        <div class="script-label">TRANSITION TO REFLECTION</div>
+        <p>"Before we close, take a few minutes to reflect in your field journals. Think about three things: your team's strategy and collaboration, which concepts feel clear versus unclear, and how ready you feel for the exam."</p>
+    </div>
+    
+    <p><strong>Display the three reflection prompts</strong> (from student guide) on board/screen. Circulate quietly while students write.</p>
+    
+    <h3>Closing (2 minutes)</h3>
+    
+    <ul>
+        <li><strong>Final congratulations to winners</strong></li>
+        <li><strong>Acknowledge all teams' effort:</strong> "These were genuinely challenging questions. You all showed strong thinking."</li>
+        <li><strong>Preview Chapter 4:</strong> "Next lesson we start exploring bias in AI—how does bias get into these systems?"</li>
+        <li><strong>Exam reminder:</strong> "Unit B exam is coming after Chapter 4. Today should help you know what to review."</li>
+    </ul>
+</section>
+
+<section class="section">
+    <h2>📊 Assessment & Mastery Points</h2>
+    
+    <h3>Today's Mastery Point Opportunity</h3>
+    
+    <p><strong>Race for the Chocolate Participation + Field Journal Reflection (1-2-3-4 scale)</strong></p>
+    
+    <div class="highlight-box">
+        <h4>Combined Assessment:</h4>
+        <p>This lesson assesses:</p>
+        <ol>
+            <li><strong>Collaborative engagement</strong> during the competition (observed)</li>
+            <li><strong>Conceptual understanding</strong> demonstrated through team discussion (observed)</li>
+            <li><strong>Thoughtful field journal reflection</strong> on learning and readiness (documented)</li>
+        </ol>
+    </div>
+    
+    <h4>Mastery Point Rubric:</h4>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Points</th>
+                <th>Criteria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>4 Points<br>(Exemplary)</strong></td>
+                <td>
+                    • Actively contributes reasoning and evidence to team discussions<br>
+                    • Engages respectfully with different viewpoints<br>
+                    • Demonstrates strong conceptual grasp in discussion or review<br>
+                    • Field journal reflection is specific and insightful—addresses all three prompts with concrete examples<br>
+                    • Shows metacognitive awareness of strengths and areas needing review
+                </td>
+            </tr>
+            <tr>
+                <td><strong>3 Points<br>(Proficient)</strong></td>
+                <td>
+                    • Participates productively in team work<br>
+                    • Contributes ideas and reasoning to discussions<br>
+                    • Engages with review discussion appropriately<br>
+                    • Field journal addresses 2-3 prompts with adequate detail<br>
+                    • Shows awareness of exam preparation needs
+                </td>
+            </tr>
+            <tr>
+                <td><strong>2 Points<br>(Developing)</strong></td>
+                <td>
+                    • Present and generally engaged but inconsistent participation<br>
+                    • May defer to teammates rather than contributing reasoning<br>
+                    • Field journal reflection is brief or superficial<br>
+                    • Limited evidence of self-assessment about readiness
+                </td>
+            </tr>
+            <tr>
+                <td><strong>1 Point<br>(Beginning)</strong></td>
+                <td>
+                    • Minimal engagement during competition<br>
+                    • Little contribution to team discussion<br>
+                    • Field journal reflection incomplete or off-topic<br>
+                    • No evidence of exam readiness self-assessment
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="tip-box">
+        <h4>💡 Assessment Philosophy for Discussion Days</h4>
+        <p>Discussion Days assess <strong>engagement with ideas and collaborative thinking</strong>, not whether students "win" the competition. A student on a losing team who contributes excellent reasoning can earn 4 points. Focus on the quality of thinking, not the scoreboard.</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>📚 Answer Key & Explanations</h2>
+    
+    <p><strong>Correct Answers:</strong></p>
+    <ul>
+        <li><strong>Question 1 (Question 2):</strong> B</li>
+        <li><strong>Question 2 (Question 3):</strong> C</li>
+        <li><strong>Question 3 (Question 5):</strong> C</li>
+        <li><strong>Question 4 (Question 7):</strong> B</li>
+        <li><strong>Question 5 (Question 9):</strong> C</li>
+        <li><strong>Question 6 (Question 10):</strong> A</li>
+        <li><strong>Question 7 (Question 11):</strong> B</li>
+        <li><strong>Question 8 (Question 12):</strong> B</li>
+    </ul>
+    
+    <div class="highlight-box">
+        <h4>Quick Reference for Review Discussion:</h4>
+        
+        <p><strong>Question 1:</strong> Why "creates surface-level plausibility without deep logical coherence" (B)?<br>
+        This captures the Lesson 3.8 insight that AI pattern-matches to produce code that LOOKS right but may lack internal consistency. Not about speed (C) or training data quantity (D).</p>
+        
+        <p><strong>Question 2:</strong> Why "specific criteria for what 'interesting' means" (C)?<br>
+        Vague terms like "interesting" need translation into specific, actionable direction. Core lesson from 3.2-3.3 about editorial judgment guiding prompts.</p>
+        
+        <p><strong>Question 3:</strong> Why "requires judgment about what information is relevant" (C)?<br>
+        The biomimicry case study showed that effective prompting isn't about rules (more vs. less context) but about JUDGMENT of relevance. Key Lesson 3.3 insight.</p>
+        
+        <p><strong>Question 4:</strong> Why "Editorial judgment—recognizing quality to guide decisions" (B)?<br>
+        Evaluation IS editorial judgment in action. Lesson 3.5 core concept: recognizing good output is what enables effective direction.</p>
+        
+        <p><strong>Question 5:</strong> Why "Specifying exactly what aspect needs improvement and how" (C)?<br>
+        "Write this better" is vague. Effective iteration requires SPECIFIC direction about WHAT to improve and HOW. Deep understanding of iteration from Chapter 3.</p>
+        
+        <p><strong>Question 6:</strong> Why "AI cannot learn without humans first recognizing what 'better' means" (A)?<br>
+        RLHF requires human judgment to define quality—AI can't discover "better" on its own. Connects Lesson 3.7 ethics to fundamental AI limitation.</p>
+        
+        <p><strong>Question 7:</strong> Why "Student A will have stronger results because iteration refines toward quality" (B)?<br>
+        Process matters beyond initial prompts. Iteration + evaluation drives quality improvement. Core Chapter 3 principle.</p>
+        
+        <p><strong>Question 8:</strong> Why "Evaluate output before spending time on complex new prompts" (B)?<br>
+        The 30-second critique pattern from Lesson 3.2 emphasizes rapid evaluation to guide next moves efficiently, not speed for speed's sake.</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>🚧 Anticipated Challenges & Solutions</h2>
+    
+    <h3>Challenge 1: One Team Dominates, Others Get Discouraged</h3>
+    <p><strong>In the moment:</strong> Emphasize that different teams are strong on different questions. "Team B just nailed Question 5 that Team A struggled with—nice work!"</p>
+    <p><strong>Prevention:</strong> Set tone early that these questions are DESIGNED to be hard. Celebrate good thinking, not just winning.</p>
+    
+    <h3>Challenge 2: Teams Finish Too Quickly (All Wrong)</h3>
+    <p><strong>If a team submits in 5 minutes with many wrong:</strong> "You worked quickly—that's one strategy. Now you get to think more deeply about which ones might be wrong. Use this time well."</p>
+    <p><strong>Redirect:</strong> Encourage them to revisit questions with more discussion rather than just guessing again.</p>
+    
+    <h3>Challenge 3: No Team Wins After 20 Minutes</h3>
+    <p><strong>Options:</strong></p>
+    <ul>
+        <li>Offer strategic hint on hardest question</li>
+        <li>Extend time by 5 minutes if teams are close</li>
+        <li>Transition to review, declaring "closest team" as winner</li>
+    </ul>
+    
+    <h3>Challenge 4: Students Ask for Hints During Competition</h3>
+    <p><strong>Response:</strong> "I can't help during competition—that's what makes it fair. But talk it through with your team. What's your reasoning for each answer?"</p>
+    
+    <h3>Challenge 5: Argument About Answer During Review</h3>
+    <p><strong>This is GOOD!</strong> "Great debate. Let's hear both sides. Who thinks it's C? Why? Who thinks it's D? Why?" Draw out reasoning, then explain why one is correct and what makes the other tempting.</p>
+</section>
+
+<section class="section">
+    <h2>♿ Differentiation & Support</h2>
+    
+    <h3>For Teams Struggling</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Challenge</th>
+                <th>Support Strategy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Can't agree on answers</strong></td>
+                <td>
+                    • "That's actually good—you're thinking critically. Can you both explain your reasoning?"<br>
+                    • "What evidence from the lessons supports each answer?"<br>
+                    • Encourage debate rather than voting
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Guessing randomly</strong></td>
+                <td>
+                    • "Slow down. Read the question carefully. What concept is this testing?"<br>
+                    • "Can you eliminate any answers that are clearly wrong?"<br>
+                    • Redirect to strategic thinking
+                </td>
+            </tr>
+            <tr>
+                <td><strong>One member dominating</strong></td>
+                <td>
+                    • Private word to dominant student: "Make sure everyone's voice is heard"<br>
+                    • To quiet member: "What's your thinking on this one?"
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>For Individual Students With Needs</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Need</th>
+                <th>Accommodation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Reading challenges</strong></td>
+                <td>
+                    • Allow student to read questions aloud to themselves<br>
+                    • Pair with supportive teammate who can read aloud<br>
+                    • Focus on concept discussion once question is understood
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Social anxiety in teams</strong></td>
+                <td>
+                    • Assign specific role: "You're the recorder—write down the team's answers"<br>
+                    • Check in privately: "How's it going with your team?"<br>
+                    • Validate contributions: "Good point you made about Question 3"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>ESL students</strong></td>
+                <td>
+                    • Pair with patient, supportive teammates<br>
+                    • Allow extra processing time<br>
+                    • Focus on conceptual understanding, not language precision
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="section">
+    <h2>🎓 Looking Ahead</h2>
+    
+    <h3>What This Reveals for Chapter 4</h3>
+    <p>As you observe today's activity, note:</p>
+    <ul>
+        <li><strong>Which concepts still need reinforcement</strong> before Unit B exam?</li>
+        <li><strong>Which students need extra support</strong> as complexity increases?</li>
+        <li><strong>Team dynamics</strong>—which teams work well together for Chapter 4's potentially sensitive discussions about bias?</li>
+    </ul>
+    
+    <h3>Connection to Unit B Exam</h3>
+    <p>The Unit B exam (Lesson 4.9) will cover both Chapters 3 and 4. Today's activity gives you diagnostic information:</p>
+    <ul>
+        <li>Questions students found hardest today signal concepts needing review</li>
+        <li>Quality of reasoning during review discussion predicts exam readiness</li>
+        <li>Field journal reflections reveal students' self-awareness about preparation needs</li>
+    </ul>
+    
+    <p><strong>Consider:</strong> Before the Unit B exam, you might want to revisit concepts that caused most struggle today.</p>
+</section>
+
+<section class="section">
+    <h2>💭 Teacher Reflection Prompts</h2>
+    
+    <p>After teaching this lesson, consider documenting in your class journal:</p>
+    
+    <div class="objectives-list">
+        <ul>
+            <li>Which questions generated the richest team discussion? Why?</li>
+            <li>What team strategies emerged? Which were most effective?</li>
+            <li>Which Chapter 3 concepts need more reinforcement before the exam?</li>
+            <li>How did the prize/competition element affect engagement and learning?</li>
+            <li>What would you adjust about timing, question difficulty, or facilitation next time?</li>
+        </ul>
+    </div>
+</section>
+
+</body>
+</html>
